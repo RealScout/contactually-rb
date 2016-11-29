@@ -1,11 +1,14 @@
 module Contactually
   module Models
     module Model
+      attr_reader :interface
+
       def self.included(base)
         base.send :extend, ClassMethods
       end
 
-      def initialize(params={})
+      def initialize(interface, params={})
+        @interface = interface
         options = params.dup
 
         options.each do |attr, _value|

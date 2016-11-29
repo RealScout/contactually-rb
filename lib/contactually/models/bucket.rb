@@ -12,6 +12,10 @@ module Contactually
       field :updated_at, :datetime
 
       field :extra_data, Hash
+
+      def contacts
+        @contacts ||= Contactually::Contacts.new(url: "/v2/buckets/#{id}/contacts", interface: interface)
+      end
     end
   end
 end

@@ -45,7 +45,7 @@ module Contactually
     META_KEY = 'meta'.freeze
 
     def build_from_model_type(item)
-      model_type.new(item)
+      model_type.new(interface, item)
     end
 
     def is_a_collection?
